@@ -1,0 +1,1 @@
+matplotlib==3.5numpy==1.21.2tensorlflow==2.4.3

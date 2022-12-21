@@ -1,0 +1,36 @@
+Steps to run
+
+1) Download and save the dataset by running data.py.
+    -> This will save the data as ./data_restructured, with the training, testing
+       and validation data saved in the subfolders ./data_restructured/train,
+       ./data_restructured/test and ./data_restructured/val
+    
+2) Build and fit the models.
+   -> The models can be built by running the files U_Net.py, V_Unet_ablated.py,
+      V_Unet_unablated.py, R_Unet.py, M_Unet.py and D_Unet.py.
+   -> The data is loaded in batches from h5 file, rather than memory, using the
+       function in the file loader.py.
+   -> The evaluation results are saved in the folder dlCWK2TL/evaluation_results
+   -> The models are saved in the folder dlCWK2TL/models
+   
+3) Visualise predictions
+   -> You can then visualise the performance of the models by generating the 
+       predicted masks from the best models using the file prediction.py
+    
+
+######################################################
+Brief explanation of files that aren't run.
+
+1) loader.py
+  -> Has H5ImageLoader class that loads the dataset batch by batch from h5 file, not memory.
+     You can specify batch size, whether shuffle the data or not, and types of target values (truth values).
+  -> The instance of the class returns a tuple of train data and target value with the batch size.
+     You can see a summary of dataset by runnig loader.py in command line.
+
+2) Models.py
+  -> has functions to generate models in for the experiment, and methods of metrics (i.e. loss, DICE, and IOU)
+
+
+
+
+
